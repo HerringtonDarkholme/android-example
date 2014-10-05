@@ -1,0 +1,50 @@
+package com.example.hello
+
+import java.util.ArrayList
+import android.app.Activity
+import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.ListView
+
+class NewItemFragment extends Fragment {
+  override def onCreateView(inflater: LayoutInflater,
+    container: ViewGroup, savedInstanceState: Bundle
+  ): View = {
+    return inflater.inflate(R.layout.)
+  }
+}
+
+class MainActivity extends Activity {
+
+  override def onCreate(savedInstanceState: Bundle) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    val myListView = find[ListView](R.id.myListView)
+    val myEditText = find[EditText](R.id.myEditText)
+    val todoItems = new ArrayList[String]()
+    var aa: ArrayAdapter[String] = null
+    aa = new ArrayAdapter[String](this, android.R.layout.simple_list_item_1, todoItems)
+    myListView.setAdapter(aa)
+    myEditText.setOnKeyListener(new View.OnKeyListener() {
+
+      override def onKey(v: View, keyCode: Int, event: KeyEvent): Boolean = {
+        if (event.getAction == KeyEvent.ACTION_DOWN) {
+          if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
+            todoItems.add(0, myEditText.getText.toString)
+            aa.notifyDataSetChanged()
+            myEditText.setText("aa")
+            return true
+          }
+        }
+        false
+      }
+    })
+  }
+  
+  def find[T <: View](id: Int): T  = {
+    findViewById(id).asInstanceOf[T]
+  }
+}

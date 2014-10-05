@@ -1,0 +1,11 @@
+package com.example.hello
+
+import android.app.Fragment
+
+class SkeletonFragment extends Fragment {
+  override def onCreateView(inflater: LayoutInflater,
+    container: ViewGroup,
+    savedInstanceState: Bundle): View = {
+    return inflator.inflate(R.layout.fragment_main)
+  }
+}

@@ -1,0 +1,36 @@
+package com.example.hello
+
+import android.content.Context
+import android.util.AttributeSet
+import android.widget.TextView
+import android.graphics.Canvas
+
+class ToDoListItemView(ctx: Context,
+                       attrs: AttributeSet,
+                       ds: Int)
+  extends TextView(ctx, attrs, ds) {
+
+  init
+
+  private var marginPaint: Paint = _
+  private var linePaint: Paint = _
+  private var paperColor: Int = _
+  private var margin: Float = _
+
+  def this(ctx: Context) =
+    this(ctx, null, 0)
+
+  def this(ctx: Context, attrs: AttributeSet) =
+    this(ctx, attrs, 0)
+
+  private def init: Unit = {
+    val myResources = getResources()
+    marginPaint = new Paint(Paint.ANTI_ALIAS_FLAG)
+    marginPaint.setColor(myResources.getColor(R.color.notepad_lines))
+    linePaint = new Paint(Paint.ANTI_ALIAS_FLAG)
+  }
+
+  override def onDraw(canvas: Canvas): Unit = {
+    super.onDraw(canvas)
+  }
+}

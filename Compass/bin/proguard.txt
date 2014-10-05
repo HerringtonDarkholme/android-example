@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:16
+-keep class h.chan.compass.CompassActivity { <init>(...); }
+
+# view res/layout/activity_compass.xml #generated:12
+-keep class h.chan.compass.CompassView { <init>(...); }
+

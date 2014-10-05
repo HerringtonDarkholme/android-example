@@ -1,0 +1,31 @@
+package com.example.hello
+
+import android.content.Context
+import android.util.AttributeSet
+import android.widget.TextView
+
+class ToDoListItemView(ctx: Context,
+                       attrs: AttributeSet,
+                       ds: Int)
+  extends TextView(ctx, attrs, ds) {
+
+  init
+
+  def this(ctx: Context) = {
+    super(ctx)
+    init
+    this
+  }
+
+  def this(ctx: Context, attrs: AttributeSet) = {
+    super(ctx, attrs)
+    init
+    this
+  }
+
+  private def init: Unit = ???
+
+  override def onDraw(canvas: Canvas): Unit = {
+    super.onDraw(canvas)
+  }
+}
