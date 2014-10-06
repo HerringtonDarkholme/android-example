@@ -1,1 +1,5 @@
 .metadata/
+gen/
+*.apk
+*.jar
+*.dex
