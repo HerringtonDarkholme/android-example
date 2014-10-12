@@ -128,7 +128,10 @@ class EarthquakeListFragment extends ListFragment {
   }
 
   def addNewQuake(quake: Quake): Unit = {
-    earthquakes.add(quake)
-    aa.notifyDataSetChanged()
+    val earthquakeActivity = getActivity().asInstanceOf[Earthquake]
+    if (quake.magnitude > earthquakeActivity.minimumMagnitude) {
+      earthquakes.add(quake)
+      aa.notifyDataSetChanged()
+    }
   }
 }

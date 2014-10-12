@@ -24,6 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PreferencesActivity"
+            android:label="Earthquake Preferences" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="h.chan.Earthquake" />
+        </activity>
     </application>
 
 </manifest>

@@ -6,5 +6,10 @@
     <string name="quake_feed">
       http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.atom
     </string>
+    <string name="menu_update">Refresh Earthquake</string>
+    <string name="auto_update_prompt">Auto Update?</string>
+    <string name="update_freq_prompt">Update Frequency</string>
+    <string name="min_quake_mag_prompt">Minimu Quake Magnitude</string>
+    <string name="menu_preferences">Preferences</string>
 
 </resources>
